@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Diarsa Pandham Pawestri – CV</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #0B1F3A;
+    --blue: #1A4F8A;
+    --mid: #2E72BC;
+    --sky: #4A9FD5;
+    --pale: #D6E9F8;
+    --ice: #EEF6FC;
+    --white: #FAFCFF;
+    --text: #1C2B3A;
+    --muted: #5A7A9A;
+    --accent: #00C2FF;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: #CBD9E8;
+    color: var(--text);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 40px 20px;
+  }
+
+  .page {
+    width: 900px;
+    background: var(--white);
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 30px 80px rgba(11,31,58,0.25);
+  }
+
+  /* ── HEADER ── */
+  .header {
+    background: var(--navy);
+    position: relative;
+    overflow: hidden;
+    padding: 52px 60px 44px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 32px;
+    align-items: end;
+  }
+
+  .header::before {
+    content: '';
+    position: absolute;
+    top: -60px; right: -60px;
+    width: 300px; height: 300px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(74,159,213,0.18) 0%, transparent 70%);
+  }
+
+  .header::after {
+    content: '';
+    position: absolute;
+    bottom: -20px; left: 260px;
+    width: 180px; height: 180px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(0,194,255,0.08) 0%, transparent 70%);
+  }
+
+  .header-label {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 3.5px;
+    text-transform: uppercase;
+    color: var(--sky);
+    margin-bottom: 12px;
+  }
+
+  .header-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 52px;
+    font-weight: 900;
+    color: #fff;
+    line-height: 1.0;
+    letter-spacing: -1px;
+  }
+
+  .header-name span {
+    color: var(--sky);
+  }
+
+  .header-tagline {
+    margin-top: 14px;
+    font-size: 13px;
+    font-weight: 300;
+    color: rgba(255,255,255,0.6);
+    line-height: 1.6;
+    max-width: 420px;
+  }
+
+  .header-contact {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-end;
+    position: relative;
+    z-index: 1;
+  }
+
+  .contact-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+    color: rgba(255,255,255,0.75);
+    font-weight: 400;
+  }
+
+  .contact-item svg {
+    flex-shrink: 0;
+    opacity: 0.7;
+  }
+
+  .contact-item a { color: inherit; text-decoration: none; }
+  .contact-item a:hover { color: var(--sky); }
+
+  /* ── BLUE BAR ── */
+  .blue-bar {
+    background: var(--blue);
+    height: 5px;
+    background: linear-gradient(90deg, var(--navy), var(--mid), var(--sky), var(--accent));
+  }
+
+  /* ── BODY LAYOUT ── */
+  .body {
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    min-height: 1200px;
+  }
+
+  /* ── SIDEBAR ── */
+  .sidebar {
+    background: var(--ice);
+    padding: 40px 28px;
+    border-right: 1px solid var(--pale);
+    position: relative;
+  }
+
+  .sidebar::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 200px;
+    background: linear-gradient(to top, rgba(26,79,138,0.04), transparent);
+  }
+
+  .sidebar-section { margin-bottom: 36px; }
+
+  .sidebar-title {
+    font-size: 9.5px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--sky);
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .sidebar-title::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--pale);
+  }
+
+  /* Education sidebar */
+  .edu-item { margin-bottom: 18px; }
+
+  .edu-school {
+    font-size: 12.5px;
+    font-weight: 600;
+    color: var(--navy);
+    line-height: 1.3;
+  }
+
+  .edu-degree {
+    font-size: 11.5px;
+    color: var(--muted);
+    margin-top: 2px;
+    line-height: 1.4;
+  }
+
+  .edu-gpa {
+    display: inline-block;
+    margin-top: 5px;
+    font-size: 10.5px;
+    font-weight: 600;
+    color: var(--blue);
+    background: rgba(46,114,188,0.1);
+    padding: 2px 8px;
+    border-radius: 20px;
+  }
+
+  .edu-year {
+    font-size: 10.5px;
+    color: var(--muted);
+    margin-top: 3px;
+  }
+
+  /* Skills */
+  .skill-tag {
+    display: inline-block;
+    font-size: 10.5px;
+    font-weight: 500;
+    background: #fff;
+    border: 1px solid var(--pale);
+    color: var(--blue);
+    padding: 4px 10px;
+    border-radius: 20px;
+    margin: 3px 3px 0 0;
+    line-height: 1.4;
+  }
+
+  .skill-tag.filled {
+    background: var(--blue);
+    color: #fff;
+    border-color: var(--blue);
+  }
+
+  /* Languages */
+  .lang-item {
+    margin-bottom: 12px;
+  }
+
+  .lang-name {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--navy);
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+  }
+
+  .lang-level {
+    font-size: 10px;
+    color: var(--muted);
+    font-weight: 400;
+  }
+
+  .lang-bar {
+    height: 3px;
+    background: var(--pale);
+    border-radius: 2px;
+    overflow: hidden;
+  }
+
+  .lang-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--blue), var(--sky));
+    border-radius: 2px;
+  }
+
+  /* Achievements */
+  .ach-item {
+    font-size: 11.5px;
+    color: var(--text);
+    line-height: 1.5;
+    padding-left: 14px;
+    position: relative;
+    margin-bottom: 10px;
+  }
+
+  .ach-item::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 7px;
+    width: 5px; height: 5px;
+    background: var(--sky);
+    border-radius: 50%;
+  }
+
+  /* ── MAIN CONTENT ── */
+  .main {
+    padding: 40px 44px 40px 40px;
+  }
+
+  .section { margin-bottom: 36px; }
+
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 22px;
+  }
+
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--navy);
+    letter-spacing: -0.3px;
+  }
+
+  .section-line {
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(90deg, var(--pale), transparent);
+  }
+
+  /* Experience item */
+  .exp-item {
+    margin-bottom: 26px;
+    padding-bottom: 26px;
+    border-bottom: 1px solid var(--ice);
+    position: relative;
+  }
+
+  .exp-item:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+
+  .exp-item::before {
+    content: '';
+    position: absolute;
+    left: -40px;
+    top: 6px;
+    width: 10px; height: 10px;
+    background: var(--white);
+    border: 2px solid var(--sky);
+    border-radius: 50%;
+  }
+
+  .exp-item::after {
+    content: '';
+    position: absolute;
+    left: -36px;
+    top: 18px;
+    width: 2px;
+    bottom: -2px;
+    background: linear-gradient(to bottom, var(--pale), transparent);
+  }
+
+  .exp-item:last-child::after { display: none; }
+
+  .exp-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  .exp-role {
+    font-size: 13.5px;
+    font-weight: 600;
+    color: var(--navy);
+    line-height: 1.3;
+  }
+
+  .exp-company {
+    font-size: 11.5px;
+    font-weight: 500;
+    color: var(--blue);
+    margin-top: 3px;
+  }
+
+  .exp-period {
+    font-size: 10.5px;
+    font-weight: 500;
+    color: #fff;
+    background: var(--mid);
+    padding: 3px 10px;
+    border-radius: 20px;
+    white-space: nowrap;
+    flex-shrink: 0;
+    letter-spacing: 0.3px;
+  }
+
+  .exp-bullets {
+    margin-top: 10px;
+    list-style: none;
+  }
+
+  .exp-bullets li {
+    font-size: 11.5px;
+    color: #3A5068;
+    line-height: 1.6;
+    padding-left: 14px;
+    position: relative;
+    margin-bottom: 4px;
+  }
+
+  .exp-bullets li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--sky);
+    font-size: 10px;
+    top: 2px;
+  }
+
+  /* Leadership */
+  .lead-item {
+    background: var(--ice);
+    border-left: 3px solid var(--sky);
+    padding: 14px 16px;
+    margin-bottom: 14px;
+    border-radius: 0 6px 6px 0;
+  }
+
+  .lead-role {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--navy);
+  }
+
+  .lead-org {
+    font-size: 11px;
+    color: var(--blue);
+    font-weight: 500;
+    margin-top: 2px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .lead-period {
+    font-size: 10.5px;
+    color: var(--muted);
+    font-weight: 400;
+  }
+
+  .lead-bullets {
+    margin-top: 8px;
+    list-style: none;
+  }
+
+  .lead-bullets li {
+    font-size: 11px;
+    color: #3A5068;
+    line-height: 1.55;
+    padding-left: 14px;
+    position: relative;
+    margin-bottom: 3px;
+  }
+
+  .lead-bullets li::before {
+    content: '·';
+    position: absolute;
+    left: 4px;
+    color: var(--sky);
+    font-size: 14px;
+    top: -1px;
+  }
+
+  /* Summary box */
+  .summary-box {
+    background: linear-gradient(135deg, var(--navy) 0%, var(--blue) 100%);
+    color: #fff;
+    padding: 20px 24px;
+    border-radius: 8px;
+    font-size: 12px;
+    line-height: 1.75;
+    font-weight: 300;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 32px;
+  }
+
+  .summary-box::before {
+    content: '"';
+    position: absolute;
+    right: 20px;
+    top: -10px;
+    font-family: 'Playfair Display', serif;
+    font-size: 100px;
+    color: rgba(255,255,255,0.06);
+    line-height: 1;
+  }
+
+  /* Tools row */
+  .tools-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 2px;
+  }
+
+  .tool-chip {
+    font-size: 10.5px;
+    font-weight: 500;
+    background: var(--pale);
+    color: var(--blue);
+    border-radius: 4px;
+    padding: 3px 9px;
+  }
+
+  /* Print */
+  @media print {
+    body { background: white; padding: 0; }
+    .page { box-shadow: none; width: 100%; }
+  }
+
+  @media (max-width: 920px) {
+    .page { width: 100%; }
+    .body { grid-template-columns: 1fr; }
+    .sidebar { border-right: none; border-bottom: 1px solid var(--pale); }
+    .header { grid-template-columns: 1fr; }
+    .header-contact { align-items: flex-start; }
+    .exp-item::before, .exp-item::after { display: none; }
+    .main { padding-left: 28px; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HEADER -->
+  <div class="header">
+    <div>
+      <div class="header-label">Curriculum Vitae</div>
+      <div class="header-name">Diarsa<br><span>Pandham</span><br>Pawestri</div>
+      <div class="header-tagline">
+        Business Administration graduate · FMCG · Sales &amp; Marketing · Demand Generation · Customer Development
+      </div>
+    </div>
+    <div class="header-contact">
+      <div class="contact-item">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8 19.79 19.79 0 01.0 1.18 2 2 0 012 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 14h-.08z"/></svg>
+        (+62) 81283607001
+      </div>
+      <div class="contact-item">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        diarsap10@gmail.com
+      </div>
+      <div class="contact-item">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+        <a href="https://www.linkedin.com/in/diarsapandham/" target="_blank">linkedin.com/in/diarsapandham</a>
+      </div>
+      <div class="contact-item">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        Tangerang Selatan, Indonesia
+      </div>
+    </div>
+  </div>
+
+  <div class="blue-bar"></div>
+
+  <!-- BODY -->
+  <div class="body">
+
+    <!-- SIDEBAR -->
+    <div class="sidebar">
+
+      <div class="sidebar-section">
+        <div class="sidebar-title">Education</div>
+
+        <div class="edu-item">
+          <div class="edu-school">Universitas Indonesia</div>
+          <div class="edu-degree">Bachelor of Business Administration</div>
+          <div class="edu-gpa">GPA 3.91 / 4.00</div>
+          <div class="edu-year">Aug 2022 – Feb 2026</div>
+          <div style="font-size:10.5px;color:var(--muted);margin-top:5px;line-height:1.4;">
+            Summa Cumlaude · Faculty's Valedictorian<br>
+            <span style="color:var(--sky)">Best Graduate &amp; Highest GPA</span>
+          </div>
+        </div>
+
+        <div class="edu-item">
+          <div class="edu-school">Woosong University</div>
+          <div class="edu-degree">Exchange · Human &amp; Digital Interface</div>
+          <div class="edu-gpa">GPA 4.50 / 4.50</div>
+          <div class="edu-year">Aug 2025 – Jan 2026 · South Korea</div>
+        </div>
+      </div>
+
+      <div class="sidebar-section">
+        <div class="sidebar-title">Languages</div>
+        <div class="lang-item">
+          <div class="lang-name">Indonesian <span class="lang-level">Native</span></div>
+          <div class="lang-bar"><div class="lang-fill" style="width:100%"></div></div>
+        </div>
+        <div class="lang-item">
+          <div class="lang-name">English <span class="lang-level">TOEFL 627 · C1</span></div>
+          <div class="lang-bar"><div class="lang-fill" style="width:88%"></div></div>
+        </div>
+      </div>
+
+      <div class="sidebar-section">
+        <div class="sidebar-title">Key Skills</div>
+        <span class="skill-tag filled">Customer Development</span>
+        <span class="skill-tag filled">Channel Strategy</span>
+        <span class="skill-tag">Data Analysis</span>
+        <span class="skill-tag">Trade Promotion</span>
+        <span class="skill-tag">In-store Activation</span>
+        <span class="skill-tag">Category Management</span>
+        <span class="skill-tag">Stakeholder Mgmt</span>
+        <span class="skill-tag">Shelf Management</span>
+        <span class="skill-tag">Demand Generation</span>
+      </div>
+
+      <div class="sidebar-section">
+        <div class="sidebar-title">Tools &amp; Software</div>
+        <div class="tools-row">
+          <span class="tool-chip">Excel (Advanced)</span>
+          <span class="tool-chip">Power BI</span>
+          <span class="tool-chip">Microsoft 365</span>
+          <span class="tool-chip">Google Workspace</span>
+        </div>
+      </div>
+
+      <div class="sidebar-section">
+        <div class="sidebar-title">Achievements</div>
+        <div class="ach-item">Best Graduate &amp; Highest GPA, Faculty of Administrative Sciences, UI (2026)</div>
+        <div class="ach-item">Selected Delegate Representative to the Royal Thai Embassy (2023)</div>
+        <div class="ach-item">Best Speaker Award, UNHCR Global Millennial Model United Nations (2021)</div>
+      </div>
+
+      <div class="sidebar-section">
+        <div class="sidebar-title">Relevant Coursework</div>
+        <div style="font-size:11px;color:var(--muted);line-height:1.7;">
+          Business Intelligence<br>
+          Supply Chain &amp; Operations Strategy<br>
+          Business Analysis<br>
+          Financial Planning &amp; Asset Management
+        </div>
+      </div>
+
+    </div>
+
+    <!-- MAIN -->
+    <div class="main">
+
+      <!-- SUMMARY -->
+      <div class="summary-box">
+        Fresh graduate in Business Administration from Universitas Indonesia with a strong interest in sales, marketing, demand generation, and customer development. With experience across FMCG and other industries, combines data-driven analysis, execution discipline, and cross-functional collaboration to drive business growth. Highly proactive and structured, eager to grow as a commercial professional who bridges strategy with in-market execution.
+      </div>
+
+      <!-- WORK EXPERIENCE -->
+      <div class="section">
+        <div class="section-header">
+          <div class="section-title">Work Experience</div>
+          <div class="section-line"></div>
+        </div>
+
+        <div style="padding-left:40px; position:relative;">
+
+          <div class="exp-item">
+            <div class="exp-header">
+              <div>
+                <div class="exp-role">Category Strategy &amp; Planning – Hair Premium (OTE)</div>
+                <div class="exp-company">Unilever Indonesia · Beauty &amp; Wellbeing · Tangerang Selatan</div>
+              </div>
+              <div class="exp-period">Mar 2026 – Present</div>
+            </div>
+            <ul class="exp-bullets">
+              <li>Led end-to-end execution of 16+ nationwide activations for TRESemmé NPD launches and Dove Store to Store, ensuring strong in-market visibility and supporting sell-out performance.</li>
+              <li>Designed cross-channel promotional strategies to accelerate sales performance and stock flush-out for Dove relaunch.</li>
+              <li>Strengthened in-store execution across Modern Trade by monitoring SKU distribution and visibility compliance, maintaining &gt;75% on-shelf availability across priority outlets.</li>
+              <li>Identified SKU productivity gaps across offline channels through sell-out, distribution, and DSI analysis, enabling data-driven assortment optimization.</li>
+              <li>Built and managed a cross-channel sell-out performance tracker, uncovering growth opportunities and supporting commercial decision-making.</li>
+            </ul>
+          </div>
+
+          <div class="exp-item">
+            <div class="exp-header">
+              <div>
+                <div class="exp-role">ULIP Customer Development – Category Strategy, Insight &amp; Shopper Marketing</div>
+                <div class="exp-company">Unilever Indonesia · Foods · Tangerang Selatan</div>
+              </div>
+              <div class="exp-period">Aug 2025 – Feb 2026</div>
+            </div>
+            <ul class="exp-bullets">
+              <li>Spearheaded visibility and in-store activation strategy across MT, GT, and E-commerce, strengthening brand presence and improving shopper conversion.</li>
+              <li>Managed 400+ visibility projects and coordinated production of 800K+ fixtures, ensuring OTIF execution and cost efficiency at scale.</li>
+              <li>Planned and executed 12+ NPD launch activations, aligning cross-functional teams to deliver commercially impactful in-store execution nationwide.</li>
+              <li>Developed data-driven visibility concepts and festive activation strategies, contributing to incremental sales uplift and stronger retail performance.</li>
+              <li>Developed planogram strategies in MT channel based on Kantar PDT insights, improving shelf visibility and SOS/SOM compliance.</li>
+            </ul>
+          </div>
+
+          <div class="exp-item">
+            <div class="exp-header">
+              <div>
+                <div class="exp-role">Commercial Intelligence Intern</div>
+                <div class="exp-company">Danone Indonesia · Jakarta</div>
+              </div>
+              <div class="exp-period">Jan 2025 – Aug 2025</div>
+            </div>
+            <ul class="exp-bullets">
+              <li>Led a digital transformation project (BARU system) to automate claims processing, improving efficiency by 86.7% and accelerating operational turnaround.</li>
+              <li>Developed sales trend forecasts enabling data-driven sales target projections and strategic planning.</li>
+              <li>Led 20+ weekly business performance reviews to uncover operational inefficiencies and propose actionable improvements.</li>
+              <li>Designed and automated biweekly, monthly, and quarterly dashboards and reports to track auditor performance KPIs.</li>
+              <li>Reviewed and validated 100+ monthly data appeal submissions with &gt;98% accuracy, ensuring strict compliance with internal audit standards.</li>
+            </ul>
+          </div>
+
+          <div class="exp-item">
+            <div class="exp-header">
+              <div>
+                <div class="exp-role">Business Development Intern – Public Sector &amp; International Donors</div>
+                <div class="exp-company">PT Data Sinergitama Jaya Tbk (Elitery) · Jakarta</div>
+              </div>
+              <div class="exp-period">Aug 2024 – Dec 2024</div>
+            </div>
+            <ul class="exp-bullets">
+              <li>Drove targeted prospecting strategies with international donor organizations, expanding qualified public sector lead pipelines.</li>
+              <li>Managed relationships with 10+ public sector clients, supporting opportunity identification and solution alignment.</li>
+              <li>Produced 10+ industry and market reports leveraging Gartner insights to inform business strategy and decision-making.</li>
+            </ul>
+          </div>
+
+          <div class="exp-item">
+            <div class="exp-header">
+              <div>
+                <div class="exp-role">Finance Transformation Intern</div>
+                <div class="exp-company">PT Home Credit Indonesia · Jakarta</div>
+              </div>
+              <div class="exp-period">Dec 2023 – Feb 2024</div>
+            </div>
+            <ul class="exp-bullets">
+              <li>Conducted data-driven analysis to identify opportunities for finance process transformation and workflow streamlining.</li>
+              <li>Collaborated with 7+ cross-functional teams to evaluate existing financial processes and provide insights for operational improvements within the Finance Transformation Office.</li>
+              <li>Gained exposure to financial planning and forecasting processes, developing an understanding of how financial projections support long-term business planning.</li>
+            </ul>
+          </div>
+
+          <div class="exp-item">
+            <div class="exp-header">
+              <div>
+                <div class="exp-role">Business Development Representative Intern</div>
+                <div class="exp-company">PT Metrodata Electronics Tbk · Jakarta</div>
+              </div>
+              <div class="exp-period">Jun 2023 – Aug 2023</div>
+            </div>
+            <ul class="exp-bullets">
+              <li>Engaged 500+ prospective B2B clients through strategic hard-selling, contributing to lead generation.</li>
+              <li>Built a comprehensive Excel dashboard to track and analyze direct selling activities, enabling data-driven decision-making for the sales team.</li>
+              <li>Coordinated and served as MC for the Salesforce CG Cloud event with 100+ attendees, strengthening client engagement and brand presence.</li>
+              <li>Collaborated cross-functionally to optimize outreach strategies and improve client response rates.</li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- LEADERSHIP -->
+      <div class="section">
+        <div class="section-header">
+          <div class="section-title">Leadership &amp; Organizations</div>
+          <div class="section-line"></div>
+        </div>
+
+        <div class="lead-item">
+          <div class="lead-role">Director of Finance &amp; Secretary</div>
+          <div class="lead-org">
+            180 Degrees Consulting Universitas Indonesia
+            <span class="lead-period">Jan 2024 – Jan 2025</span>
+          </div>
+          <ul class="lead-bullets">
+            <li>Led a team of 4 in developing strategic financial and administrative forecasts, driving sustainable organizational growth.</li>
+            <li>Actively contributed to 7+ client consulting projects, offering financial insights to support tailored, high-impact solutions.</li>
+            <li>Designed and implemented new financial strategies that streamlined operations and optimized resource allocation, resulting in an 853.4% increase in net profit.</li>
+          </ul>
+        </div>
+
+        <div class="lead-item">
+          <div class="lead-role">Manager of External Relations and Partnership</div>
+          <div class="lead-org">
+            HIMANIA FIA UI
+            <span class="lead-period">Mar 2023 – Jan 2025</span>
+          </div>
+          <ul class="lead-bullets">
+            <li>Led a team of 7 and secured 20+ partnerships with companies including BRI and Kapal Api.</li>
+            <li>Increased sponsorship revenue by 74% YoY through strategic partnership initiatives.</li>
+            <li>Served as Project Officer for a national-level comparative study event.</li>
+          </ul>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div style="background:var(--navy); padding:14px 60px; display:flex; justify-content:space-between; align-items:center;">
+    <div style="font-size:10px;color:rgba(255,255,255,0.4);letter-spacing:1.5px;text-transform:uppercase;">Diarsa Pandham Pawestri</div>
+    <div style="display:flex;gap:6px;">
+      <div style="width:20px;height:3px;background:var(--blue);border-radius:2px;"></div>
+      <div style="width:10px;height:3px;background:var(--sky);border-radius:2px;"></div>
+      <div style="width:5px;height:3px;background:var(--accent);border-radius:2px;"></div>
+    </div>
+    <div style="font-size:10px;color:rgba(255,255,255,0.4);letter-spacing:1px;">diarsap10@gmail.com</div>
+  </div>
+
+</div>
+</body>
+</html>
